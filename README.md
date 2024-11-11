@@ -1,8 +1,10 @@
 # NTD Calculator Backend
 
-- see other specific implementation requirements in backend/README.md
+- see other specific implementation requirements in the [backend](backend/README.md) folder
 
-## Tech Stack, choose from: Java, Clojure, MySQL, Node.js, Go, Python, Vue.js/React.js, AWS.
+## Tech Stack
+
+- choose from: Java, Clojure, MySQL, Node.js, Go, Python, Vue.js/React.js, AWS.
 
 - [x] AWS
 
@@ -27,7 +29,9 @@
 - run `bash run.sh dev` for development and `bash run.sh` for production
 - since the environment for the free tier is limited the containers and docker-compose files have been constrained accordingly
 
-## Improvements (that would need more time)
+## Improvements (unspecified need more time)
 
 - [ ] change http to https
-
+- [ ] setup IAM/SSO
+- [ ] setup load balancer
+- [ ] move from Docker to K8s

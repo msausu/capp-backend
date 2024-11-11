@@ -37,8 +37,9 @@
 - [x] add automated tests such as Unit Tests back-end
 - [x] the passwords should be encrypted.
 
-## Improvements (that would need more time)
+## Improvements (unspecified, need more time)
 
 [ ] change basic authentication to token-based (this should be done properly using and SSO/IAM infrastructure, it should not be handled by the microservice)
 [ ] setup users & operations via configuration, move hardcoded configuration to application.properties
+[ ] use a Vault for storing secrets
 
