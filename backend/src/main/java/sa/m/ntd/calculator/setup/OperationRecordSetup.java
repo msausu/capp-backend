@@ -14,8 +14,6 @@ import sa.m.ntd.calculator.repo.OperationRepository;
 
 import java.math.BigDecimal;
 
-import static sa.m.ntd.calculator.data.CalculatorUserData.USER_LIST;
-
 @Component
 @Order(3)
 class OperationRecordSetup implements ApplicationRunner {

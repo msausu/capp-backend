@@ -23,7 +23,6 @@ public class CalculatorUser {
 
     @NotNull
     @Size(min = 8, max = 2048)
-    @Pattern(regexp = "^\\p{Alnum}+$")
     @Column(name = "password", nullable = false)
     private String password;
 

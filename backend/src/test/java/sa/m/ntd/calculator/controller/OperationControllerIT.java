@@ -4,7 +4,6 @@ import static io.restassured.RestAssured.given;
 import io.restassured.http.ContentType;
 
 import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,7 +31,8 @@ class OperationControllerIT {
     void getReportTest() {
         final String username = "john@gmail.com", password = "john0000";
         Arrays.asList(
-                REPORT_ENDPOINT
+                REPORT_ENDPOINT,
+                REPORT_ENDPOINT + "/" + username + "/last-balance"
                 ).forEach(url -> {
             given().auth().preemptive().basic(username, password)
                     .log().all()

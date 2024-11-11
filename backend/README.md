@@ -1,40 +1,44 @@
-# builders-pessoafisica-springboot
-very simple API for brazilian individuals
+#
+# NTD Calculator Backend
 
-1. Java Spring Boot project (using necessary modules):
-  - REST API;
-  - PessoaFísica/Customer CRUD (id, nome/name, CPF, dataNascimento/birthDate);
-  - CRUD must have API GET, POST, DELETE, PATCH and PUT.
-2. The GET API must accept "query strings" to search for customers by CPF and name;
-3. Client response should be paged;
-4. The customer has the age calculated considering the date of birth;
-5. At the root of the project, there must be a Postman to assess the api.
+## Users
 
----
+[x] provide with at least two user/passwords
 
-## Options
+- `john@gmail.com` password `john0000`
+- `mary@gmail.com` passord `mary0000`
 
-1. Maven;
-2. Spring Boot modules: `RepositoryRestResource`,` AutoConfigureRestDocs`;
-3. Unit tests (API) using `junit` and` restassured` (restassured.io);
-4. The application ![documentation](doc/site/index.html), ![tests performed](doc/site/surefire-report.html) and ![services](doc/generated-docs/rest-api-cliente.html) can be found in `target/site` (generated via` mvn site: site`);
-5. `Postman` tests are generated via` Spring Docs` and converted to `Postman` via` restdocs-to-postman`;
-6. The tests are run via `newman` in a` run-postman-tests.sh` shell script.
+## Tech Stack, choose from: Java, Clojure, MySQL, Node.js, Go, Python, Vue.js/React.js, AWS.
 
----
+- [x] Java (Spring Boot)
+- [x] MySQL
 
-## Generation of artifacts
+## Repos
 
-`bash generate-artifact.sh`
+- [x] Frontend and Backend should be on separate stacks.
+- [x] Frontend and Backend should be on separate repos.
 
-or
+## Technical requirements
 
-`mvn clean site`
+### Backend requirements
 
----
+- [x] all client-server interaction should be through RESTful API (versionated).
+- [x] collection endpoints should be able to provide filters and pagination.
+- [x] operations should be able to handle negative numbers. For example (-1) - (-5) = 4, YES but no parenthesis
+- [x] use third-party operation for random string https://www.random.org/clients, YES 8 digits
+- [x] decide the cost of each operation, YES defined at startup
+- [x] users will have a starting credit/balance, YES defined at startup currently set to 100
+- [x] all the database operations should be transactional, to maintain integrity when multiple operations try to modify the balance at the same time.
+- [x] the system does not allow more operations if there is not enough balance. YES per USER (multiple logins are allowed), the balance is not shared
+- [x] each request will be deducted from the user’s balance. If the user’s balance isn’t enough to cover the request cost, the request shall be denied.
+- [x] records should be soft-deleted only (the arithmetic operations should be able to be deleted with a logic delete in the database)
+- [x] all the logic should be isolated in the service layer, never write logic in the controllers.
+- [x] include a log system.
+- [x] add automated tests such as Unit Tests back-end
+- [x] the passwords should be encrypted.
 
-## Postman testing
+## Improvements (that would need more time)
 
-`bash run-postman-tests.sh`
+[ ] change basic authentication to token-based (this should be done properly using and SSO/IAM infrastructure, it should not be handled by the microservice)
+[ ] setup users & operations via configuration, move hardcoded configuration to application.properties
 
-![Postman tests](doc/postman-pessoa-fisica.gif)
