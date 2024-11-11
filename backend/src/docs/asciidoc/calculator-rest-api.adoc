@@ -1,0 +1,44 @@
+= Calculator REST API
+: doctype: book
+: icons: font
+: source-highlighter: highlightjs
+: toc: left
+: toclevels: 3
+: sectlinks:
+
+[[specs]]
+== Requirements
+
+1. REST API for calculator operations: ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION, SQUARE ROOT, RANDOM STRINGS
+2. REST API for report operation records: PAGING, SORTING, SEARCHING
+
+[[obs]]
+== Observations
+
+1. RANDOM STRINGS fetches only numeric 8 digit random numbers
+
+[[verbs]]
+== HTTP verbs
+
+HTTP verbs that correspond operation on the API.
+
+| ===
+| Verb | Use
+
+| `GET`
+| (READ) Used to fetch operation records
+
+| `POST`
+| (CREATE) Used to execute an operation
+
+| `PUT`
+| (UPDATE) Used to (logically exclude a record)
+
+| ===
+
+[[resources]]
+== Resources
+
+Base of the `/api/v1/calculator` API
+
+... TBD
